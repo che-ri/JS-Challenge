@@ -1,7 +1,5 @@
-// <⚠️ DONT DELETE THIS ⚠️>
-import "./styles.css";
+
 const colors = ["#1abc9c", "#3498db", "#9b59b6", "#f39c12", "#e74c3c"];
-// <⚠️ /DONT DELETE THIS ⚠️>
 
 /*
 ✅ The text of the title should change when the mouse is on top of it.
