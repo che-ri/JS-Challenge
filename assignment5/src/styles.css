@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Gugi&display=swap");
+
+/*Keyframes*/
+@keyframes snow {
+  0% {
+    background-position: 0px 0px, 0px 0px, 0px 0px;
+  }
+  100% {
+    background-position: 500px 1000px, 400px 400px, 300px 300px;
+  }
+}
+
+@-moz-keyframes snow {
+  0% {
+    background-position: 0px 0px, 0px 0px, 0px 0px;
+  }
+  100% {
+    background-position: 500px 1000px, 400px 400px, 300px 300px;
+  }
+}
+
+@-webkit-keyframes snow {
+  0% {
+    background-position: 0px 0px, 0px 0px, 0px 0px;
+  }
+  50% {
+    background-color: #b4cfe0;
+  }
+  100% {
+    background-position: 500px 1000px, 400px 400px, 300px 300px;
+    background-color: #6b92b9;
+  }
+}
+
+@-ms-keyframes snow {
+  0% {
+    background-position: 0px 0px, 0px 0px, 0px 0px;
+  }
+  100% {
+    background-position: 500px 1000px, 400px 400px, 300px 300px;
+  }
+}
+
+body {
+  font-family: "Gugi", cursive;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: black;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.95);
+  text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5);
+  text-align: center;
+}
+
+.splash-snow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-image: url("snow.png"), url("snow3.png"), url("snow2.png");
+  -webkit-animation: snow 20s linear infinite;
+  -moz-animation: snow 20s linear infinite;
+  -ms-animation: snow 20s linear infinite;
+  animation: snow 20s linear infinite;
+}
+
+img {
+  width: 40%;
+}
+/* i {
+  color: #d41616;
+  background: #0b5e15;
+  padding: 0.8em;
+  border-radius: 50%;
+} */
+
+h1 {
+  font-size: 50px;
+  font-weight: 800;
+  color: #b3030c;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 30px;
+  color: rgb(255, 212, 85);
+}
