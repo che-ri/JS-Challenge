@@ -1,0 +1,32 @@
+body {
+  position: relative;
+  font-family: sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url("./airplane-mirror.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+h1 {
+  color: white;
+  margin-bottom: 30px;
+  transition: 1s ease-in-out;
+}
+
+select {
+  box-sizing: border-box;
+  height: 50px;
+  padding: 0 30px;
+  background: linear-gradient(#182c61, #3b3b98);
+  color: white;
+  font-size: 15px;
+}
+
+option {
+  color: black;
+}
