@@ -18,3 +18,12 @@ form div h2 {
   margin: 10px;
 }
 
+form div ul {
+  padding: 20px;
+}
+
+form div ul li {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
