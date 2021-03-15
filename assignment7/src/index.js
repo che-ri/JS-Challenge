@@ -1,6 +1,5 @@
 const taskForm = document.querySelector(".task-form"),
-  taskInput = document.querySelector("#task"),
-  taskList = document.querySelector("form div"),
+  taskInput = taskForm.querySelector("input"),
   pendingList = document.querySelector(".pending-list"),
   finishedList = document.querySelector(".finished-list");
 
@@ -14,29 +13,61 @@ let tasks = [];
 //   taskInput.value = "";
 // });
 
-function deleteTask(event) {
-  const btn = event.target,
-    li = btn.parentNode;
-  pendingList.removeChild(li);
-}
-
-function finishTask(event) {}
-
-function paintTask(currentValue) {
-  //input의 value를 가지고, 화면에 보이게 나타냄.
+function finishedPaintTask(currentValue) {
+  //pendingPaintTask와 기능이 같다.
   const li = document.createElement("li"),
     delBtn = document.createElement("button"),
     finishBtn = document.createElement("button"),
     span = document.createElement("span"),
     btnBox = document.createElement("span");
 
-  //pending또는 finished의 ul에 들어갈 요소다.
-  //tast를 지울 용도이다.
   delBtn.textContent = "❌";
-  delBtn.addEventListener("click", deleteTask);
+  delBtn.addEventListener("click", deleteTaskBtn);
   finishBtn.textContent = "✅";
-  finishBtn.addEventListener("click", finishTask);
+  finishBtn.addEventListener("click", finishTaskBtn);
   span.textContent = currentValue;
+  finishedList.appendChild(li);
+  li.appendChild(span);
+  li.appendChild(btnBox);
+  btnBox.appendChild(delBtn);
+  btnBox.appendChild(finishBtn);
+}
+
+function deleteTaskBtn(event) {
+  const btn = event.target,
+    span = btn.parentNode,
+    li = span.parentNode;
+  li.remove();
+}
+
+function finishTaskBtn(event) {
+  const btn = event.target,
+    span = btn.parentNode,
+    li = span.parentNode,
+    currentValue = li.firstChild.innerText;
+  li.remove();
+  finishedPaintTask(currentValue);
+}
+
+function pendingPaintTask(currentValue) {
+  //input의 value를 가지고, 화면에 보이게 나타냄.
+  const li = document.createElement("li"),
+    btnBox = document.createElement("span");
+
+  //tesk를 보여주는 용도
+  const span = document.createElement("span");
+  span.innerText = currentValue;
+
+  // delBtn 클릭할 때!
+  const delBtn = document.createElement("button");
+  delBtn.innerText = "❌";
+  delBtn.addEventListener("click", deleteTaskBtn);
+
+  // finishBtn 클릭할때,
+  const finishBtn = document.createElement("button");
+  finishBtn.innerText = "✅";
+  finishBtn.addEventListener("click", finishTaskBtn);
+
   pendingList.appendChild(li);
   li.appendChild(span);
   li.appendChild(btnBox);
@@ -45,11 +76,10 @@ function paintTask(currentValue) {
 }
 
 function handleSubmit(event) {
-  //submit 이벤트가 동작했을때 사용된다.
-  event.preventDefault();
   //인풋의 기본작동을 막는다.
+  event.preventDefault();
   const currentValue = taskInput.value;
-  paintTask(currentValue);
+  pendingPaintTask(currentValue);
   taskInput.value = "";
 }
 
