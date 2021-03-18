@@ -1,0 +1,29 @@
+* {
+  margin: 10px 0;
+}
+
+body {
+  font-family: sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+strong {
+  display: block;
+}
+
+.game-result {
+  display: none;
+}
+
+.showing {
+  display: block;
+}
+
+.user-num {
+  width: 100px;
+}
