@@ -1,0 +1,59 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: black;
+}
+
+.calc {
+  padding: 2px;
+  border: 1px solid gray;
+}
+
+td {
+  width: 100px;
+  height: 100px;
+}
+
+input,
+button {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  border: 1px solid black;
+  color: white;
+  font-size: 20px;
+}
+
+input {
+  background: black;
+}
+
+button {
+  background: #363439;
+}
+
+button[value="C"] {
+  background: gray;
+}
+
+button[value="+"],
+button[value="-"],
+button[value="*"],
+button[value="/"] {
+  background: orange;
+}
+
+input {
+  text-align: end;
+  padding-right: 20px;
+}

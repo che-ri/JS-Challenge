@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./src/styles.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="calc">
+        <div>
+          <table>
+            <tbody>
+              <tr class="number">
+                <td colspan="3"><input type="text" id="inval" /></td>
+                <td>
+                  <button onclick="calcReset()" value="C" id="reset-btn">
+                    C
+                  </button>
+                </td>
+              </tr>
+              <tr class="number">
+                <td><button onclick="add(7)" value="7">7</button></td>
+                <td><button onclick="add(8)" value="8">8</button></td>
+                <td><button onclick="add(9)" value="9">9</button></td>
+                <td><button onclick="add('+')" value="+">+</button></td>
+              </tr>
+              <tr class="number">
+                <td><button onclick="add(4)" value="4">4</button></td>
+                <td><button onclick="add(5)" value="5">5</button></td>
+                <td><button onclick="add(6)" value="6">6</button></td>
+                <td><button onclick="add('-')" value="-">-</button></td>
+              </tr>
+              <tr class="number">
+                <td><button onclick="add(1)" value="1">1</button></td>
+                <td><button onclick="add(2)" value="2">2</button></td>
+                <td><button onclick="add(3)" value="3">3</button></td>
+                <td><button onclick="add('*')" value="*">*</button></td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <button onclick="add(0)" value="0">0</button>
+                </td>
+                <td>
+                  <button onclick="calculate()" value="=" id="result-btn">
+                    =
+                  </button>
+                </td>
+                <td><button onclick="add('/')" value="/">/</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <script src="src/index.js"></script>
+    <script>
+      const printValue = document.querySelector("#inval");
+      function add(char) {
+        printValue.value = printValue.value + char;
+      }
+
+      function calculate() {
+        const result = eval(printValue.value);
+        printValue.value = result;
+      }
+
+      function calcReset() {
+        printValue.value = "";
+      }
+    </script>
+  </body>
+</html>
